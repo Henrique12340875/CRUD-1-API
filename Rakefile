@@ -10,3 +10,7 @@ task :insire_data do
     f.puts data.to_s
   end
 end
+
+task :run do
+  exec("rackup -p 3000")
+end
