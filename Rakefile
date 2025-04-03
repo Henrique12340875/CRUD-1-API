@@ -14,3 +14,13 @@ end
 task :run do
   exec("rackup -p 3000")
 end
+
+namespace "db" do
+  task :migrate do
+    exec("ruby db/migrator.rb")
+  end
+
+  task :create do
+    exec("mkdir db/storage && ruby db/connect.rb")
+  end
+end
